@@ -23,7 +23,7 @@
 			this.university = university;
 		}
 		show(student){
-			console.log(`Hi! My name is ${this.name}. I study at ${this.university} university`);
+			console.log(`Hi! My name is ${this.name}. I stady at ${this.university} university`);
 
 		}
 	}
@@ -33,17 +33,22 @@
 			this.school = school;
 		}
 		show(pupil){
-			console.log(`Hi! My name is ${this.name}. I study at ${this.school} school`);
+			console.log(`Hi! My name is ${this.name}. I stady at ${this.school} school`);
 
 		}
 	}
 
 	class Group{
-		constructor(group){
-			this.group = group;
+		constructor(){
+			this.peoples = [];
 		}
-		showAll(group){
-			console.log(`Hi! My name is ${group.name}. I study at ${group.school}`);
+		addPerson(person){
+			this.peoples.push(person);
+		}
+		static showAll(group){
+			//for(let i of group)
+			//console.log(`Hi! ${i.name}`);
+			console.log(group);
 
 		}
 	}
@@ -53,6 +58,10 @@
 	person.show();
 	student.show();
 	pupil.show();
+	var group = new Group();
+	group.addPerson(student);
+	group.addPerson(pupil);
+	Group.showAll(group);
 
 
 </script>
