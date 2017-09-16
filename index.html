@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="galery">
+	<head>
+		<title>Task for you</title>
+		<meta charset="utf-8">
+	</head>
+<body>
+
+<script>
+	
+	class Pregnant{
+		constructor (gender, birth, isBorn) {
+			this.gender = gender;
+			this.birth = birth;
+			this.isBorn = isBorn;
+		}
+		move(){
+			console.log('I am moving');
+		}
+	}
+
+	let Baby = new Pregnant('m','12.01.2010',false);
+	console.log(Baby);
+	console.log(Baby.move());
+
+	class myPregnant extends Pregnant{
+		constructor (gender, birth, isBorn, name) {
+			super(gender, birth, isBorn);
+			this.name = name;
+		}
+		move(){
+			console.log(`My name is ${this.name} and i am moving in a special way`);
+		}
+	}
+	let myBaby = new myPregnant('f','20.04.2018',true,'Sofia');
+	console.log(myBaby);
+	console.log(myBaby.move());
+
+
+
+</script>
+
+</body>
