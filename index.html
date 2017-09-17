@@ -45,10 +45,10 @@
 		addPerson(person){
 			this.peoples.push(person);
 		}
-		static showAll(group){
-			//for(let i of group)
-			//console.log(`Hi! ${i.name}`);
-			console.log(group);
+		showAll(){
+			for(let i of this.peoples)
+				console.log(i.show());
+			//console.log(this.peoples);
 
 		}
 	}
@@ -61,7 +61,7 @@
 	var group = new Group();
 	group.addPerson(student);
 	group.addPerson(pupil);
-	Group.showAll(group);
+	group.showAll();
 
 
 </script>
