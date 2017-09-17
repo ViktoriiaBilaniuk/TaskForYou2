@@ -8,34 +8,60 @@
 
 <script>
 	
-	class Pregnant{
-		constructor (gender, birth, isBorn) {
-			this.gender = gender;
-			this.birth = birth;
-			this.isBorn = isBorn;
-		}
-		move(){
-			console.log('I am moving');
-		}
-	}
-
-	let Baby = new Pregnant('m','12.01.2010',false);
-	console.log(Baby);
-	console.log(Baby.move());
-
-	class myPregnant extends Pregnant{
-		constructor (gender, birth, isBorn, name) {
-			super(gender, birth, isBorn);
+	class Person{
+		constructor(name){
 			this.name = name;
 		}
-		move(){
-			console.log(`My name is ${this.name} and i am moving in a special way`);
+		show(person){
+			console.log(`Hi! My name is ${this.name}`);
+		}
+		
+	}
+	class Student extends Person{
+		constructor(name, university){
+			super(name);
+			this.university = university;
+		}
+		show(student){
+			console.log(`Hi! My name is ${this.name}. I stady at ${this.university} university`);
+
 		}
 	}
-	let myBaby = new myPregnant('f','20.04.2018',true,'Sofia');
-	console.log(myBaby);
-	console.log(myBaby.move());
+	class Pupil extends Person{
+		constructor(name, school){
+			super(name);
+			this.school = school;
+		}
+		show(pupil){
+			console.log(`Hi! My name is ${this.name}. I stady at ${this.school} school`);
 
+		}
+	}
+
+	class Group{
+		constructor(){
+			this.peoples = [];
+		}
+		addPerson(person){
+			this.peoples.push(person);
+		}
+		showAll(){
+			for(let i of this.peoples)
+				console.log(i.show());
+			//console.log(this.peoples);
+
+		}
+	}
+	var person = new Person('Vika');
+	var student = new Student('Olena','LPU');
+	var pupil = new Pupil('Sasha', 'Olesha');
+	person.show();
+	student.show();
+	pupil.show();
+	var group = new Group();
+	group.addPerson(student);
+	group.addPerson(pupil);
+	group.showAll();
 
 
 </script>
